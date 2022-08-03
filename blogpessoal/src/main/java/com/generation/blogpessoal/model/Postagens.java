@@ -6,12 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 /*Anotações-parametros que definem um certo de comportamentos para elas(Vai definir elas como entidade)*/
 @Entity
@@ -33,6 +37,9 @@ public class Postagens {
 	@UpdateTimestamp
 	private LocalDateTime data;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagens")
+	private Temas temas;
 
 	public Long getId() {
 		return id;
@@ -64,7 +71,17 @@ public class Postagens {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
-	}	
+	}
+
+	public Temas getTemas() {
+		return temas;
+	}
+
+	public void setTemas(Temas temas) {
+		this.temas = temas;
+	}
+
+	
 	
 	
 
