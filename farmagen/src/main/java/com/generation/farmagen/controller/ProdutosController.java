@@ -38,8 +38,8 @@ public class ProdutosController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/produtos{tipo}")
-	public ResponseEntity<List<Produtos>> GetByIdDermocosmeticos(@PathVariable String tipo){
+	@GetMapping("/tipo/{tipo}")
+	public ResponseEntity<List<Produtos>> GetByIdTipo(@PathVariable String tipo){
 		return ResponseEntity.ok(repository.findAllByTipoContainingIgnoreCase(tipo));
 	}
 	
