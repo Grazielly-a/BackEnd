@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*Anotações-parametros que definem um certo de comportamentos para elas(Vai definir elas como entidade)*/
 @Entity
-@Table(name = "postagens")
+@Table(name = "tb_postagens")
 public class Postagens {
 	
 	@Id
