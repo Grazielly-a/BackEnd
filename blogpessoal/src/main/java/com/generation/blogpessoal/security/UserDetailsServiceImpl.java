@@ -31,4 +31,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		
 	}
 
+	public UsuariosRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(UsuariosRepository repository) {
+		this.repository = repository;
+	}	
+
 }
