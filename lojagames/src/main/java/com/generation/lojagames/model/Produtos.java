@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
@@ -33,9 +34,16 @@ public class Produtos {
 	@Positive(message = "Digite um valor maior que zaro")
 	private BigDecimal preco;
 	
+	@NotNull
+	private int quantidade;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("categorias")
-	private Categorias categorias;	
+	private Categorias categorias;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("categorias")
+	private Usuarios usuarios;
 	
 
 	public Long getId() {
@@ -68,6 +76,14 @@ public class Produtos {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
+	}	
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	public Categorias getCategorias() {
@@ -76,6 +92,14 @@ public class Produtos {
 
 	public void setCategorias(Categorias categorias) {
 		this.categorias = categorias;
+	}
+
+	public Usuarios getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Usuarios usuarios) {
+		this.usuarios = usuarios;
 	}
 	
 	
