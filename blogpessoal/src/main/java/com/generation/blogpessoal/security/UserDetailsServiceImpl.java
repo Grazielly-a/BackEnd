@@ -30,13 +30,6 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
 		
 	}
-
-	public UsuariosRepository getRepository() {
-		return repository;
-	}
-
-	public void setRepository(UsuariosRepository repository) {
-		this.repository = repository;
-	}	
+	
 
 }
