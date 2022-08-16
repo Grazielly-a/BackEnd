@@ -23,15 +23,15 @@ public class Produtos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "Obrigatório inserir o tipo de produto")
+	@NotBlank(message = "Obrigatório inserir o tipo de produto!")
 	@Size(min = 2, max = 100)
 	private String tipo;
 	
-	@NotBlank(message = "Obrigatório inserir o tipo de produto")
+	@NotBlank(message = "Obrigatório inserir o nome do produto!")
 	@Size(min = 2, max = 100)
 	private String nomeProduto;
 	
-	@Positive(message = "Digite um valor maior que zaro")
+	@Positive(message = "Digite um valor maior que zero!")
 	private BigDecimal preco;
 	
 	@NotNull

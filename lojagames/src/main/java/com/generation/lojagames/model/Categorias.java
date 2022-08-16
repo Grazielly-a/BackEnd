@@ -22,7 +22,7 @@ public class Categorias {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "Obrigatório inserir a categoria")
+	@NotBlank(message = "Obrigatório inserir a categoria!")
 	@Size(min = 2, max = 50)
 	private String categorias;
 	
@@ -52,8 +52,6 @@ public class Categorias {
 
 	public void setProdutos(List<Produtos> produtos) {
 		this.produtos = produtos;
-	}	
-	
-	
+	}		
 
 }
